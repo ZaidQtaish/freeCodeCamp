@@ -1,5 +1,8 @@
 import { HandlerProps } from 'react-reflex';
-import { SuperBlocks } from '../../../shared-dist/config/curriculum';
+import {
+  ChallengeLang,
+  SuperBlocks
+} from '../../../shared-dist/config/curriculum';
 import type { Chapter } from '../../../shared-dist/config/chapters';
 import { BlockLayouts, BlockLabel } from '../../../shared-dist/config/blocks';
 import type { ChallengeFile, Ext } from '../../../shared-dist/utils/polyvinyl';
@@ -49,6 +52,7 @@ export type Question = {
 export type FillInTheBlank = {
   sentence: string;
   blanks: MultipleChoiceAnswer[];
+  inputType?: 'pinyin-tone' | 'pinyin-to-hanzi';
 };
 
 export type Fields = {
@@ -221,6 +225,7 @@ export type ChallengeNode = {
     helpCategory: string;
     hooks?: Hooks;
     id: string;
+    lang?: ChallengeLang;
     instructions: string;
     internal?: {
       content: string;
